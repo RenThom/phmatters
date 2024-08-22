@@ -1,0 +1,63 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        // Check for click events on the navbar burger icon
+            $(".navbar-burger").click(function() {
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+            });
+        });
+        function toggleModalClasses(event) {
+            var modalId = event.currentTarget.dataset.modalId;
+            var modal = $(modalId);
+            modal.toggleClass('is-active');
+            $('html').toggleClass('is-clipped');
+        };
+        $('.open-modal').click(toggleModalClasses);
+        $('.close-modal').click(toggleModalClasses);
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+
+      //Tabs Feature
+      document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tabs ul li');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.tab;
+
+                    tabs.forEach(item => item.classList.remove('is-active'));
+                    tab.classList.add('is-active');
+
+                    tabContents.forEach(content => {
+                        if (content.id === target) {
+                            content.classList.add('is-active');
+                        } else {
+                            content.classList.remove('is-active');
+                        }
+                    });
+                });
+            });
+        });
+
+
+        //Card Toggle 
+        function toggleCardContent(element) {
+            const cardContent = element.nextElementSibling;
+            const caret = element.querySelector('.caret');
+            cardContent.style.display = cardContent.style.display === 'block' ? 'none' : 'block';
+            caret.classList.toggle('rotate');
+        }
+    </script>
+ 

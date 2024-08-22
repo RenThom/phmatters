@@ -1,0 +1,400 @@
+---
+---
+
+
+//Colours
+
+$ph-white: #F7F7FF;
+$ph-yellow: #F2D0A4;
+$ph-grey: #545E75;
+$ph-green: #3F826D;
+$ph-red: #FF312E;
+$ph-black: #020202;
+
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
+
+//Fonts
+
+$body-font: 'Lato', sans-serif;
+$nav-font: 'Rubik', sans-serif;
+$heading-font: 'Oleo Script', sans-serif;
+$general-font: 'PT Sans Narrow', sans-serif;
+
+//General
+
+.site-content{
+    display: flex;
+    min-height: 80vh;
+    flex-direction: column;
+}
+
+.site-body{
+    flex:1;
+    margin: 0px;
+    font-family: $nav-font;
+}
+
+.pg-heading{
+    font-size: 24px;
+    font-weight: 600;
+    color: $ph-green;
+}
+
+.pg-sub-heading{
+    color: $ph-grey;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pg-heading, .pg-sub-heading{
+    text-align: center;
+}
+
+.body-text{
+    font-size: 18px;
+    line-height: 2;
+}
+
+.general-body{
+    padding: 5%;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.is-active {
+    display: block;
+}
+
+.tab-content-design{
+    font-size: 20px;
+}
+
+.tabs-design{
+    --bulma-tabs-toggle-link-border-color: #fefefe;
+}
+
+.tabs-design ul{
+    border-bottom: 2px solid $ph-green !important;
+    --bulma-tabs-toggle-link-border-style: none;
+    border-bottom-left-radius: 0px !important;
+}
+
+.tabs-design li a{
+    border-radius: 0px !important;
+}
+
+.tabs-design ul li a{
+    color: $ph-grey !important;
+}
+
+.tabs-design ul li.is-active a{
+    color: $ph-white !important;
+    background-color: $ph-green !important;
+    border: none !important;
+    border-bottom: transparent;
+}
+
+.tab-header{
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.info-link{
+    color: $ph-green;
+}
+
+.card-design{
+    border-radius: 4px;
+    border: 4% solid $ph-white;
+    background-color: $ph-yellow;
+    font-size: 18px;
+}
+
+.card-header-design{
+    padding: 2%;
+    font-size: 22px;
+}
+
+.card-content-dropdown{
+    display: none;
+}
+
+.card-dropdown-textbox{
+    padding: 2%;
+}
+
+.img-format{
+    max-height: 300px;
+}
+
+.img-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-description{
+    text-align: center;
+    font-style: italic;
+}
+
+
+
+//Nav Bar
+
+.nav-title{
+    font-size: 26px;
+}
+
+.nav-design{
+    background-color: $ph-green !important;
+    padding: 10px;
+    text-align: right;
+    font-size: 20px;
+}
+
+.nav-home a,
+.nav-home a:visited,
+.nav-home a:hover,
+.nav-home a:active {
+    text-decoration: none;
+    color: $ph-white;
+}
+
+
+.nav-item-style{
+    text-decoration: none;
+    color: $ph-white;
+    
+    &:hover{
+        background-color: $ph-yellow;
+        padding: 10px;
+        color: $ph-grey;
+    }
+}
+
+
+.navbar-item{
+    margin-right: 5%;
+}
+
+.navbar-right{
+    margin-right: 0%;
+}
+
+.cv-button{
+    background-color: $ph-white !important;
+    color: $ph-green;
+}
+
+
+//Home
+
+.home-img{
+    max-width: 100%;
+    height: auto;
+}
+
+.home-intro{
+    padding: 5%;
+}
+
+.about-body{
+    padding: 2%;
+}
+
+.latest-items{
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.latest-content-design{
+    font-size: 16px;
+}
+
+.latest-header{
+    font-size: 18px;
+    font-weight: 800;
+}
+
+//Blog
+
+.content-details{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    box-orient: vertical;
+}
+
+.blog-title{
+    font-size: 20px;
+    color: $ph-green;
+}
+
+.blog-excerpt{
+    font-size: 18px;
+    a{
+        color: $ph-black;
+    }
+}
+
+.blog-intro{
+    font-size: 26px;
+    text-align: center;
+    color: $ph-green;
+}
+
+.blog-intro-excerpt{
+    text-align: center;
+    font-size: 18px;
+    color: $ph-black;
+}
+
+.blog-intro-section{
+    padding-bottom: 4%;
+}
+
+.blog-title-display{
+    display: flex;
+}
+
+.category-style{
+    padding-left: 1%;
+}
+
+.blog-pg-title{
+    text-align: center;
+    font-size: 26px;
+}
+
+.blog-pg-date{
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.blog-layout{
+    font-size: 18px;
+
+    p{
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    a{
+        color: $ph-green;
+    }
+
+    img{
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+        max-height: 400px;
+    }
+
+    ul{
+        padding-left: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        list-style-type: circle;
+    }
+
+    h6{
+        display: flex;
+        justify-content: center;
+        font-style: italic;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 22px;
+        font-weight: 800;
+    }
+}
+
+.button-layout{
+    display: flex;
+    justify-content: center;
+}
+
+.share-buttons{
+    justify-content: center;
+    display: flex;
+    padding-bottom: 2%;
+}
+
+.button-style{
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: $ph-green;
+    a{
+        color: $ph-white;
+    }
+}
+
+.button-design{
+    background-color: $ph-red;
+    color: $ph-white;
+   font-size: 18px;
+   font-weight: 800;
+}
+
+//Footer
+
+.cv-footer{
+    background-color: $ph-grey;
+    color: $ph-white;
+    padding: 1%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+
+    a{
+        text-decoration: none;
+        color: $ph-white;
+    }
+}
+
+.sm-icons{
+    font-size: 24px;
+    text-align: center;
+
+    a{
+        text-decoration: none;
+        color: $ph-white;
+    }
+}
+
+.icon-padding{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-text{
+    text-align: center;
+    font-family: $general-font;
+}
+
+.footer-build{
+    font-size: 14px;
+}
+
+.footer-design{
+    background-color: $ph-green;
+    color: $ph-white;
+    font-size: 18px;
+    padding: 1%;
+}
+

@@ -1,0 +1,44 @@
+---
+layout: default
+title: Research
+permalink: /research/
+---
+
+<div class="general-body">
+    <div class="container">
+        <div class="tabs is-medium is-centered is-toggle is-fullwidth tabs-design">
+            <ul>
+              <li class="is-active" data-tab="tab1"><a>Publications</a></li>
+              <li data-tab="tab2"><a>Presentations</a></li>
+              <li data-tab="tab3"><a>Projects</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="tab-content is-active">
+            {% for publications in site.data.publications %}
+                {% if publications.link %}
+                <a class="info-link" href="{{ publications.link }}" target="_blank">
+                    <p class="tab-content-design tab-header">{{ publications.title }} </p>
+                </a>
+                {% else %}
+                    <p class="tab-content-design tab-header">{{ publications.title }} </p>
+                {% endif %}
+                <p class="tab-content-design">{{ publications.authors }}, ({{ publications.year }}) {{ publications.journal }}</p>
+                <br>
+            {% endfor %}
+        </div>
+        <div id="tab2" class="tab-content">
+            {% for presentations in site.data.presentations %}
+            <p class="tab-content-design tab-header">{{ presentations.title }}  </p>
+            <p class="tab-content-design"> {{ presentations.event }}, {{ presentations.location }}, {{ presentations.year }} </p>
+            <br>
+            {% endfor %}
+        </div>
+        <div id="tab3" class="tab-content">
+            {% for projects in site.data.projects %}
+            <p class="tab-content-design tab-header"> {{ projects.title }} ({{ projects.status }})</p>
+            <p class="tab-content-design"> {{ projects.type }}: {{ projects.description }} </p>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>

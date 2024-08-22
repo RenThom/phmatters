@@ -1,0 +1,76 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+pagination:
+  enabled: true
+  per_page: 1
+  collection: posts
+  permalink: /:num/
+  trail:
+    before: 1
+    after: 1
+---
+
+<div class="container general-body">
+    <div class="blog-intro-section">
+        <h1 class="blog-intro">Welcome to Public Health Matters</h1>
+        <br>
+        <p class="blog-intro-excerpt">This is a space where I engage in public health discussion, all thoughts are my own. This is a space where I engage in public health discussion, all thoughts are my own. This is a space where I engage in public health discussion, all thoughts are my own.</p>
+    </div>
+        {% for post in paginator.posts %}
+        <div class="card">
+            <div class="card-content">
+                <a href="{{ post.url }}">
+                    <div class="blog-title-display">
+                        <p class="blog-title"> {{ post.title }} </p>
+                        <span class="category-style"> {{ post.categories }} </span>
+                    </div>
+                    <p> {{ post.date | date: '%B %d, %Y' }}</p>
+                    <div class="content content-details blog-excerpt">
+                        <p> {{ post.content }} </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+            {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="pagination-previous">Previous</a>
+            {% else %}
+            <a class="pagination-previous" disabled>Previous</a>
+            {% endif %}
+        
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="pagination-next">Next page</a>
+            {% else %}
+            <a class="pagination-next" disabled>Next page</a>
+            {% endif %}
+        
+
+            {% if paginator.page_trail %}
+            <ul class="pagination-list">
+                {% if paginator.page > 2 %}
+                <a href="{{ paginator.first_page_path }}" class="pagination-link" aria-label="Goto page 1">1</a>
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                {% endif %}
+                {% for trail in paginator.page_trail %}
+                    <li {% if page.url == trail.path %}class="selected"{% endif %}>
+                        <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}" class="pagination-link{% if trail.num == paginator.page %} is-current{% endif %}" aria-label="Goto page {{trail.num}}">{{ trail.num }}</a>
+                    </li>
+                {% endfor %}
+
+
+
+                {% assign total_pages_minus_2 = paginator.total_pages | minus: 2 %}
+                {% if paginator.page <= total_pages_minus_2 %}
+
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                <a href="{{ paginator.last_page_path }}" class="pagination-link" aria-label="Goto page {{paginator.total_pages}}">{{paginator.total_pages}}</a>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </nav>
+</div>

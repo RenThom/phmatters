@@ -1,0 +1,45 @@
+---
+layout: default
+title: Education
+permalink: /education/
+---
+
+<div class="general-body">
+    <div class="container">
+        <div class="tabs is-medium is-centered is-toggle is-fullwidth tabs-design">
+            <ul>
+              <li class="is-active" data-tab="tab1"><a>Academic Degrees</a></li>
+              <li data-tab="tab2"><a>Certifications</a></li>
+              <li data-tab="tab3"><a>Professional Courses</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="tab-content is-active">
+            {% for education in site.data.education %}
+            <p class="tab-content-design tab-header">{{ education.degree }} in {{education.program}} ({{education.status}}) </p>
+            <p class="tab-content-design">{{education.school}}, {{education.location}}</p>
+            <br>
+            {% endfor %}
+        </div>
+        <div id="tab2" class="tab-content">
+            {% for certifications in site.data.certifications %}
+                {% if certifications.link %}
+                <a class="info-link" href="{{ certifications.link }}" target="_blank">
+                    <p class="tab-content-design tab-header">{{ certifications.certificate }}  ({{ certifications.status }})
+                </a>
+                {% else %}
+                    <p class="tab-content-design tab-header">{{ certifications.certificate }}  ({{ certifications.status }})
+                {% endif %}
+            </p>
+            <p class="tab-content-design"> {{ certifications.institution }}, {{ certifications.location }} </p>
+            <br>
+            {% endfor %}
+        </div>
+        <div id="tab3" class="tab-content">
+            {% for courses in site.data.courses %}
+            <p class="tab-content-design tab-header"> {{ courses.course }} ({{ courses.status }})</p>
+            <p class="tab-content-design"> {{ courses.institution }}, {{ courses.location }} </p>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>

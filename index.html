@@ -1,0 +1,41 @@
+---
+layout: default
+title: Introduction
+---
+
+<div class="columns home-intro">
+    <div class="column is-narrow is-3">
+        <img class = "home-img" src="/assets/images/portfolio-img.jpeg">
+        <h1 class = "pg-heading">Renee Thomas-Venugopal</h1>
+        <h2 class = "pg-sub-heading">Public Health Practitioner</h2>
+    </div>
+    <div class="column about-body">
+        <h1 class = "pg-heading"> About Me</h1>
+        <h2 class = "pg-sub-heading"> Value | Value | Value </h2>
+        <p class = "body-text"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h2 class = "pg-sub-heading"> Selected Publications</h2>
+        <div class="latest-items">
+            {% assign publications = site.data.publications | slice: 0, 3 %}
+            {% for publication in publications %}
+              {% if publication.link %}
+              <a class="info-link" href="{{ publication.link }}" target="_blank">
+                  <p class="latest-content-design latest-header">{{ publication.title }} </p>
+              </a>
+              {% else %}
+                  <p class="latest-content-design latest-header">{{ publication.title }} </p>
+              {% endif %}
+              <p class="latest-content-design">{{ publication.authors }}, ({{ publication.year }}) {{ publication.journal }}</p>
+              <br>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h2 class = "pg-sub-heading">Latest Posts</h2>
+    </div>
+    
+</div>

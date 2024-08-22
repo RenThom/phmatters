@@ -1,0 +1,80 @@
+<head>
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<script src="https://kit.fontawesome.com/b397c89db1.js" crossorigin="anonymous"></script>	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Oleo+Script&family=PT+Sans+Narrow&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Rubik&display=swap" rel="stylesheet">
+	<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	<!-- Favicon Info -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ed1c24">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="description" content="{{page.description}}" />
+	<!-- Favicon Info Ends -->
+	
+	<!-- Beginnning of SEO Tags -->
+
+	<!-- Twitter Card data -->
+	{% if site.twitter_handle %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="{{ site.twitter_handle }}" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:image" content="{% if page.banner %}{{ page.banner | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
+    {% if page.excerpt %}
+    <meta name="twitter:description"  content="{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}" />
+    {% elsif site.description %}
+    <meta name="twitter:description" content="{{ site.description | strip_html | strip_newlines | truncate: 200 }}" />
+    {% endif %}
+	{% endif %}
+	<!-- Twitter summary card with large image must be at least 280x150px -->
+	<meta name="twitter:image:src" content="{% if page.banner %}{{ page.banner | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
+
+	<!-- Open Graph data -->
+	<meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+    {% if page.excerpt %}
+    <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}" />
+    {% elsif site.description %}
+    <meta property="og:description" content="{{ site.description | strip_html | strip_newlines | truncate: 200 }}" />
+    {% endif %}
+    <meta property="og:image" itemprop="image" content="{% if page.banner %}{{ page.banner | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" >
+    <meta property="og:type" content="website" />
+    {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+	<meta property="fb:admins" content="178636202166843" />
+	
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	{% if page.excerpt %}
+    <meta itemprop="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}" />
+    {% elsif site.description %}
+    <meta itemprop="description" content="{{ site.description | strip_html | strip_newlines | truncate: 200 }}" />
+    {% endif %}
+	<meta itemprop="image" content="{% if page.banner %}{{ page.banner | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+
+	<!-- End of SEO Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "stylesheet" type = "text/css" href = "/assets/css/style.css"/>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149293275-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-149293275-1');
+	</script>
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>

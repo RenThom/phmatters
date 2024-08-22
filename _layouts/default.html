@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#" class="has-navbar-fixed-top">
+    {% include head.html %}
+<body class="site-body">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+    <main class="site-content">
+        {% include navigation.html %}
+        {{ content }}
+    </main>
+    {% include scripts.html %}
+</body>
+    {% include footer.html %}
+</html>
