@@ -5,11 +5,13 @@
 //Colours
 
 $ph-white: #F7F7FF;
-$ph-yellow: #F2D0A4;
+$ph-yellow: #F1C40F;
 $ph-grey: #545E75;
-$ph-green: #3F826D;
-$ph-red: #FF312E;
+$ph-red: #E74C3C;
 $ph-black: #020202;
+$ph-orange: #D35400;
+$ph-beige: #F5CBA7;
+$ph-light-orange: #E67E22; 
 
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
 
@@ -37,13 +39,14 @@ $general-font: 'PT Sans Narrow', sans-serif;
 .pg-heading{
     font-size: 24px;
     font-weight: 600;
-    color: $ph-green;
+    color: $ph-orange;
 }
 
 .pg-sub-heading{
-    color: $ph-grey;
+    color: $ph-light-orange;
     font-size: 20px;
     font-weight: 600;
+    padding-bottom: 1%;
 }
 
 .pg-heading, .pg-sub-heading{
@@ -76,7 +79,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 }
 
 .tabs-design ul{
-    border-bottom: 2px solid $ph-green !important;
+    border-bottom: 2px solid $ph-orange !important;
     --bulma-tabs-toggle-link-border-style: none;
     border-bottom-left-radius: 0px !important;
 }
@@ -86,12 +89,12 @@ $general-font: 'PT Sans Narrow', sans-serif;
 }
 
 .tabs-design ul li a{
-    color: $ph-grey !important;
+    color: $ph-light-orange !important;
 }
 
 .tabs-design ul li.is-active a{
     color: $ph-white !important;
-    background-color: $ph-green !important;
+    background-color: $ph-orange !important;
     border: none !important;
     border-bottom: transparent;
 }
@@ -102,7 +105,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 }
 
 .info-link{
-    color: $ph-green;
+    color: $ph-orange;
 }
 
 .card-design{
@@ -149,7 +152,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 }
 
 .nav-design{
-    background-color: $ph-green !important;
+    background-color: $ph-orange !important;
     padding: 10px;
     text-align: right;
     font-size: 20px;
@@ -171,7 +174,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
     &:hover{
         background-color: $ph-yellow;
         padding: 10px;
-        color: $ph-grey;
+        color: $ph-light-orange;
     }
 }
 
@@ -186,9 +189,12 @@ $general-font: 'PT Sans Narrow', sans-serif;
 
 .cv-button{
     background-color: $ph-white !important;
-    color: $ph-green;
+    color: $ph-orange;
 }
 
+a.navbar-item:hover{
+    color: $ph-orange;
+}
 
 //Home
 
@@ -233,7 +239,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 
 .blog-title{
     font-size: 20px;
-    color: $ph-green;
+    color: $ph-orange;
 }
 
 .blog-excerpt{
@@ -246,7 +252,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 .blog-intro{
     font-size: 26px;
     text-align: center;
-    color: $ph-green;
+    color: $ph-orange;
 }
 
 .blog-intro-excerpt{
@@ -286,7 +292,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
     }
 
     a{
-        color: $ph-green;
+        color: $ph-orange;
     }
 
     img{
@@ -338,7 +344,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 .button-style{
     margin-left: 1%;
     margin-right: 1%;
-    background-color: $ph-green;
+    background-color: $ph-orange;
     a{
         color: $ph-white;
     }
@@ -354,7 +360,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 //Footer
 
 .cv-footer{
-    background-color: $ph-grey;
+    background-color: $ph-light-orange;
     color: $ph-white;
     padding: 1%;
     font-size: 20px;
@@ -392,7 +398,7 @@ $general-font: 'PT Sans Narrow', sans-serif;
 }
 
 .footer-design{
-    background-color: $ph-green;
+    background-color: $ph-orange;
     color: $ph-white;
     font-size: 18px;
     padding: 1%;
