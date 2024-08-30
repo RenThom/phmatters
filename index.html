@@ -35,12 +35,14 @@ title: Introduction
         </div>
     </div>
     <div>
-        <h2 class = "pg-heading">Latest Posts</h2>
-        {% for post in paginator.posts %}
-        <a class="info-link" href="{{ post.url }}">
-            <p class="latest-content-design latest-header">{{ post.title }}, {{ post.date | date: '%B %d, %Y' }} </p>
-        </a>
-        {% endfor %}
+        <h2 class = "blog-hook">Interested in insights on Public Health in Small Island Developing States? Check out my blog, Public Health Matters</h2>
+        <div class="index-blog-button">
+            <div class="button blog-button">
+                <a href="/blog">
+                    BLOG
+                </a>
+            </div>
+        </div>
     </div>
     
 </div>
