@@ -110,7 +110,7 @@
         <div class="general-body">
     <div class="container">
         <div class="tabs is-medium is-centered is-fullwidth tabs-design">
-            <ul>
+            <ul class="list-style">
               <li class="is-active" data-tab="tab1"><a>Publications</a></li>
               <li data-tab="tab2"><a>Presentations</a></li>
               <li data-tab="tab3"><a>Projects</a></li>
@@ -232,6 +232,28 @@
                 });
             });
         });
+
+        function openTab(tabId, linkId) {
+            // Hide all tab content
+            var tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(function(content) {
+                content.classList.remove('is-active');
+            });
+
+            // Remove active-link class from all links
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                link.classList.remove('active-link');
+            });
+
+            // Show the clicked tab
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('is-active');
+
+            // Add active-link class to the clicked link
+            var selectedLink = document.getElementById(linkId);
+            selectedLink.classList.add('active-link');
+        }
 
 
         //Card Toggle 

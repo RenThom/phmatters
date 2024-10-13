@@ -233,6 +233,28 @@
             });
         });
 
+        function openTab(tabId, linkId) {
+            // Hide all tab content
+            var tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(function(content) {
+                content.classList.remove('is-active');
+            });
+
+            // Remove active-link class from all links
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                link.classList.remove('active-link');
+            });
+
+            // Show the clicked tab
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('is-active');
+
+            // Add active-link class to the clicked link
+            var selectedLink = document.getElementById(linkId);
+            selectedLink.classList.add('active-link');
+        }
+
 
         //Card Toggle 
         function toggleCardContent(element) {

@@ -7,7 +7,7 @@ permalink: /education/
 <div class="general-body">
     <div class="container">
         <div class="tabs is-medium is-centered is-fullwidth tabs-design">
-            <ul>
+            <ul class="list-style">
               <li class="is-active" data-tab="tab1"><a>Academic Degrees</a></li>
               <li data-tab="tab2"><a>Certifications</a></li>
               <li data-tab="tab3"><a>Professional Courses</a></li>
@@ -19,6 +19,11 @@ permalink: /education/
             <p class="tab-content-design">{{education.school}}, {{education.location}}</p>
             <br>
             {% endfor %}
+            <!-- <div class="tab-buttons">
+                <a href="#tab2" class="nav-link active-link" id="link-tab2" onclick="openTab('tab2', 'link-tab2')">
+                    <button class="button button-design">Go To Certifications</button>
+                </a>
+            </div> -->
         </div>
         <div id="tab2" class="tab-content">
             {% for certifications in site.data.certifications %}

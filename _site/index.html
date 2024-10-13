@@ -109,7 +109,9 @@
 </nav>
         <div class="columns home-intro">
     <div class="column is-narrow is-3">
-        <img class = "home-img" src="/assets/images/portfolio-img.jpeg">
+        <div class="home-img-div">
+            <img class = "home-img" src="/assets/images/portfolio-img.jpeg">
+        </div>
         <h1 class = "pg-heading">Renee Thomas-Venugopal</h1>
         <h2 class = "pg-sub-heading">Public Health Practitioner</h2>
     </div>
@@ -213,6 +215,28 @@
                 });
             });
         });
+
+        function openTab(tabId, linkId) {
+            // Hide all tab content
+            var tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(function(content) {
+                content.classList.remove('is-active');
+            });
+
+            // Remove active-link class from all links
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                link.classList.remove('active-link');
+            });
+
+            // Show the clicked tab
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('is-active');
+
+            // Add active-link class to the clicked link
+            var selectedLink = document.getElementById(linkId);
+            selectedLink.classList.add('active-link');
+        }
 
 
         //Card Toggle 

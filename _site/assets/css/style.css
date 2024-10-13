@@ -47,6 +47,14 @@
 
 .img-description { text-align: center; font-style: italic; }
 
+.tab-buttons { display: flex; justify-content: center; }
+
+@media screen and (max-width: 600px) { .pg-heading { padding-top: 5%; }
+  .home-intro { margin-top: 0%; } }
+@media screen and (max-width: 800px) { .home-img { max-height: 300px; }
+  .home-img-div { display: flex; justify-content: center; } }
+@media screen and (max-width: 1018px) { .list-style { padding-top: 5%; }
+  .site-content { min-height: 85vh; } }
 .nav-title { font-size: 26px; }
 
 .nav-design { background-color: #D35400 !important; padding: 10px; text-align: right; font-size: 20px; }
@@ -64,6 +72,7 @@
 
 a.navbar-item:hover { color: #D35400; }
 
+@media screen and (max-width: 1018px) { .nav-item-style { color: #D35400; } }
 .home-img { max-width: 100%; height: auto; }
 
 .home-intro { padding: 5%; }

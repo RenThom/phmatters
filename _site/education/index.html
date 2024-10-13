@@ -110,7 +110,7 @@
         <div class="general-body">
     <div class="container">
         <div class="tabs is-medium is-centered is-fullwidth tabs-design">
-            <ul>
+            <ul class="list-style">
               <li class="is-active" data-tab="tab1"><a>Academic Degrees</a></li>
               <li data-tab="tab2"><a>Certifications</a></li>
               <li data-tab="tab3"><a>Professional Courses</a></li>
@@ -130,6 +130,11 @@
             <p class="tab-content-design">Illinois Institute of Technology, Chicago, IL, U.S.A</p>
             <br>
             
+            <!-- <div class="tab-buttons">
+                <a href="#tab2" class="nav-link active-link" id="link-tab2" onclick="openTab('tab2', 'link-tab2')">
+                    <button class="button button-design">Go To Certifications</button>
+                </a>
+            </div> -->
         </div>
         <div id="tab2" class="tab-content">
             
@@ -216,6 +221,28 @@
                 });
             });
         });
+
+        function openTab(tabId, linkId) {
+            // Hide all tab content
+            var tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(function(content) {
+                content.classList.remove('is-active');
+            });
+
+            // Remove active-link class from all links
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                link.classList.remove('active-link');
+            });
+
+            // Show the clicked tab
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('is-active');
+
+            // Add active-link class to the clicked link
+            var selectedLink = document.getElementById(linkId);
+            selectedLink.classList.add('active-link');
+        }
 
 
         //Card Toggle 
