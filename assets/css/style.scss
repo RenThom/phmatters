@@ -171,6 +171,10 @@ $general-font: 'PT Sans Narrow', sans-serif;
     .nav-title{
         font-size: 22px !important;
     }
+
+    .nav-burger-mobile{
+        width: 3.5rem;
+    }
 }
 
 @media screen and (max-width: 1018px){
