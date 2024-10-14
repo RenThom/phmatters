@@ -54,7 +54,9 @@
 @media screen and (max-width: 800px) { .home-img { max-height: 300px; }
   .home-img-div { display: flex; justify-content: center; }
   .nav-title { font-size: 20px !important; }
-  .nav-burger-mobile { width: 3.5rem; } }
+  .nav-burger-mobile { width: 3.5rem; }
+  .tab-header { font-size: 20px; }
+  .tab-content-design { font-size: 18px; } }
 @media screen and (max-width: 1018px) { .list-style { padding-top: 5%; }
   .site-content { min-height: 85vh; } }
 .nav-title { font-size: 26px; }
