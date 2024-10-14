@@ -52,7 +52,8 @@
 @media screen and (max-width: 600px) { .pg-heading { padding-top: 5%; }
   .home-intro { margin-top: 0%; } }
 @media screen and (max-width: 800px) { .home-img { max-height: 300px; }
-  .home-img-div { display: flex; justify-content: center; } }
+  .home-img-div { display: flex; justify-content: center; }
+  .nav-title { font-size: 22px !important; } }
 @media screen and (max-width: 1018px) { .list-style { padding-top: 5%; }
   .site-content { min-height: 85vh; } }
 .nav-title { font-size: 26px; }

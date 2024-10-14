@@ -167,6 +167,10 @@ $general-font: 'PT Sans Narrow', sans-serif;
         display: flex;
         justify-content: center;
     }
+
+    .nav-title{
+        font-size: 22px !important;
+    }
 }
 
 @media screen and (max-width: 1018px){
